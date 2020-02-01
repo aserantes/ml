@@ -7,7 +7,7 @@ const app = express();
 const port = process.env.PORT || 5000;
 const API = process.env.API_URL || "https://api.mercadolibre.com";
 
-// this route will handle single direct item data requests. the item_id is passed as a url parameter after /api/items/
+// this route will handle single direct item data requests. Item_id is passed as a url parameter after /api/items/
 app.get("/api/items/:id", async (req, res) => {
   //get passed item's id
   const itemId = req.params.id;
@@ -57,12 +57,12 @@ app.get("/api/items/:id", async (req, res) => {
     });
 });
 
-// this route will handle item search requests. the query is passed as a query parameter named "q" after /api/items
+// This route will handle item search requests. The query is passed as a query parameter named "q" after /api/items
 app.get("/api/items", (req, res) => {
   // get search criteria from the query
   const query = req.query.q;
 
-  // The challenge asks specifically for 4 records (default is 1000). I learned at the MeLi API docs that I can add "limit=4" as a query parameter to achieved that.
+  // The challenge asks specifically for 4 records (default is 1000). I learned at the MeLi API docs that I can add "limit=4" as a query parameter to achieve that.
   const searchUri = `${API}/sites/MLA/search?q=${query}&limit=4`;
   if (query) {
     // check that query param exists
@@ -70,16 +70,6 @@ app.get("/api/items", (req, res) => {
       .get(searchUri)
       .then(searchRes => {
         const itemArr = searchRes.data.results;
-
-        // not sure about this way to get "categories"
-        /*         const cateArr = searchRes.data.filters[0].values[0].path_from_root.reduce(
-          (acc, cat) => {
-            acc.push(cat.name);
-            return acc;
-          },
-          []
-        ); */
-
         const result = {
           author: {
             name: "Alejandro",
@@ -107,7 +97,7 @@ app.get("/api/items", (req, res) => {
         res.send(result);
       })
       .catch(error => {
-        res.send(error);
+        res.status(error.response.data.status).send(error.response.data);
       });
   } else {
     // if required query param is empty or doesn't exist, send an error
