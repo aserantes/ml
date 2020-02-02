@@ -10,25 +10,29 @@ const ListWrapper = styled.div`
   @media (max-width: 640px) {
     margin: 0 10px;
   }
-  flex: auto;
-  flex-direction: column;
-  margin: 50px 150px 0 150px;
-  align-items: center;
-  @media (min-width: 1280px) {
-    margin: 100px 300px 0 300px;
+  display: block;
+  background-color: ${props => props.theme.white};
+  margin: 50px 150px;
+  border-radius: 4px;
+  @media (min-width: 1281px) {
+    margin: 100px 300px;
+    border-radius: 8px;
   }
 `;
 
 const Message = styled.p`
+  text-align: center;
   padding: 10px;
   font-size: 16px;
   background-color: ${props => props.theme.white};
+  border-radius: 4px;
   & span {
     font-weight: bold;
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 1281px) {
     padding: 20px;
     font-size: 32px;
+    border-radius: 8px;
   }
 `;
 

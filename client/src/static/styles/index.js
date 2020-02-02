@@ -6,7 +6,8 @@ const theme = {
   black: "#333",
   darkGray: "#666",
   gray: "#999",
-  lightGray: "#EEE"
+  lightGray: "#EEE",
+  white: "#fff"
 };
 
 const GlobalStyle = createGlobalStyle`
@@ -20,15 +21,23 @@ const GlobalStyle = createGlobalStyle`
     font-size: 1em;
   }
 
-  div {
-    display: flex;
-  }
-
   body {
     background: #eee;
     color: #000;
     box-sizing: border-box;
+    overflow: scroll;
   }
+
+  a:hover, a:visited, a:link, a:active  {
+    text-decoration: none;
+    color: #000;
+  }
+
+  div {
+    display: flex;
+  }
+
+
   button {
     margin: 0;
     padding: 0;
@@ -37,16 +46,20 @@ const GlobalStyle = createGlobalStyle`
     color: inherit;
     background: none;
   }
+
   button:focus {
     outline:none;
+
   }
   input:focus {
     outline:none;
+
   }
   button::-moz-focus-inner {
     padding: 0;
     border: none;
   }
+
   ol, ul {
     list-style: none;
   }
