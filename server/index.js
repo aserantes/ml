@@ -39,9 +39,12 @@ app.get("/api/items/:id", async (req, res) => {
                 decimals: (item.price - Math.floor(item.price)).toFixed(2) * 100
               },
               picture: item.pictures[0].url,
-              condition: item.attributes.filter(
-                attr => attr.id === "ITEM_CONDITION"
-              )[0].value_name,
+              condition:
+                item.condition !== "not_specified"
+                  ? item.attributes.filter(
+                      attr => attr.id === "ITEM_CONDITION"
+                    )[0].value_name
+                  : "",
               free_shipping: item.shipping.free_shipping,
               sold_quantity: item.sold_quantity,
               description: desc.plain_text
@@ -85,9 +88,12 @@ app.get("/api/items", (req, res) => {
                 decimals: (item.price - Math.floor(item.price)).toFixed(2) * 100
               },
               picture: item.thumbnail,
-              condition: item.attributes.filter(
-                attr => attr.id === "ITEM_CONDITION"
-              )[0].value_name,
+              condition:
+                item.condition !== "not_specified"
+                  ? item.attributes.filter(
+                      attr => attr.id === "ITEM_CONDITION"
+                    )[0].value_name
+                  : "",
               free_shipping: item.shipping.free_shipping,
 
               // This is not asked for in the exersice, but I need it to show location in search results

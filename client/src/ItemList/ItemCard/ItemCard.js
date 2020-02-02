@@ -6,9 +6,9 @@ const ItemCard = ({ item }) => {
     city
   } = item;
   return (
-    <article>
+    <div>
       <div>{city}</div>
-    </article>
+    </div>
   );
 };
 

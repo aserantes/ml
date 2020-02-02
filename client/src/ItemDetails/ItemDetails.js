@@ -34,7 +34,7 @@ const ItemDetails = () => {
   const [response, setResponse] = useState({});
 
   return (
-    <section>
+    <div>
       {response.isLoading && <div>Cargando...</div>}
 
       {!response.isloading && response.item && <div>{response.item.title}</div>}
@@ -42,7 +42,7 @@ const ItemDetails = () => {
       {!response.isLoading && response.errorMsg && (
         <div>Ha ocurrido un error, por favor intenta nuevamente</div>
       )}
-    </section>
+    </div>
   );
 };
 
