@@ -41,7 +41,7 @@ const ItemList = () => {
   const [response, setResponse] = useState({});
 
   return (
-    <section>
+    <div>
       {response.isLoading && <div>Buscando...</div>}
 
       {!response.isloading && response.items && response.items.length === 0 && (
@@ -60,7 +60,7 @@ const ItemList = () => {
       {!response.isLoading && response.errorMsg && (
         <div>Ha ocurrido un error, por favor intenta nuevamente</div>
       )}
-    </section>
+    </div>
   );
 };
 
