@@ -5,7 +5,7 @@ const app = express();
 
 // you can create a .env file at root to store secrets. (See .env.example for syntax)
 const port = process.env.PORT || 5000;
-const API = process.env.API_URL || "https://api.mercadolibre.com";
+const API = process.env.EXT_API || "https://api.mercadolibre.com";
 
 // this route will handle single direct item data requests. Item_id is passed as a url parameter after /api/items/
 app.get("/api/items/:id", async (req, res) => {
@@ -88,7 +88,11 @@ app.get("/api/items", (req, res) => {
               condition: item.attributes.filter(
                 attr => attr.id === "ITEM_CONDITION"
               )[0].value_name,
-              free_shipping: item.shipping.free_shipping
+              free_shipping: item.shipping.free_shipping,
+
+              // This is not asked for in the exersice, but I need it to show location in search results
+              state: item.address.state_name,
+              city: item.address.city_name
             });
             return acc;
           }, [])
