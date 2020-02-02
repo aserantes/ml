@@ -47,7 +47,7 @@ const InputWrapper = styled.div`
 
 const Input = styled.input`
   &::placeholder {
-    color: ${props => props.theme.lightGray};
+    color: ${props => props.theme.gray};
   }
   font-size: 16px;
   flex: auto;
@@ -74,7 +74,7 @@ const SearchButtonWrapper = styled.div`
 `;
 
 const SearchButton = styled.div`
-  background-color: ${props => props.theme.white};
+  background-color: ${props => props.theme.lightGray};
   border-radius: 0 4px 4px 0;
   width: 42px;
   height: 36px;

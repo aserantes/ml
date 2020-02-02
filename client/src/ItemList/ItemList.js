@@ -2,8 +2,35 @@ import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import queryString from "query-string";
 import axios from "axios";
+import styled from "styled-components";
 
 import ItemCard from "./ItemCard/ItemCard";
+
+const ListWrapper = styled.div`
+  @media (max-width: 640px) {
+    margin: 0 10px;
+  }
+  flex: auto;
+  flex-direction: column;
+  margin: 50px 150px 0 150px;
+  align-items: center;
+  @media (min-width: 1280px) {
+    margin: 100px 300px 0 300px;
+  }
+`;
+
+const Message = styled.p`
+  padding: 10px;
+  font-size: 16px;
+  background-color: ${props => props.theme.white};
+  & span {
+    font-weight: bold;
+  }
+  @media (min-width: 1280px) {
+    padding: 20px;
+    font-size: 32px;
+  }
+`;
 
 const ItemList = () => {
   // abstract axios call with query as argument
@@ -41,11 +68,13 @@ const ItemList = () => {
   const [response, setResponse] = useState({});
 
   return (
-    <div>
-      {response.isLoading && <div>Buscando...</div>}
+    <ListWrapper>
+      {response.isLoading && <Message>Buscando...</Message>}
 
       {!response.isloading && response.items && response.items.length === 0 && (
-        <div>No hay publicaciones que coincidan con "{params.search}"</div>
+        <Message>
+          No hay publicaciones que coincidan con <span>"{params.search}"</span>
+        </Message>
       )}
 
       {!response.isloading &&
@@ -58,9 +87,9 @@ const ItemList = () => {
         ))}
 
       {!response.isLoading && response.errorMsg && (
-        <div>Ha ocurrido un error, por favor intenta nuevamente</div>
+        <Message>Ha ocurrido un error, por favor intenta nuevamente.</Message>
       )}
-    </div>
+    </ListWrapper>
   );
 };
 

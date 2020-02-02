@@ -4,9 +4,9 @@ const theme = {
   primary: "#FFE600",
   highLight: "3483FA",
   black: "#333",
-  gray: "#666",
-  lightGray: "#999",
-  white: "#EEE"
+  darkGray: "#666",
+  gray: "#999",
+  lightGray: "#EEE"
 };
 
 const GlobalStyle = createGlobalStyle`
@@ -25,7 +25,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background: #fff;
+    background: #eee;
     color: #000;
     box-sizing: border-box;
   }
