@@ -1,5 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Redirect,
+  Switch,
+  Route
+} from "react-router-dom";
 
 import SearchBar from "./SearchBar/SearchBar";
 import ItemList from "./ItemList/ItemList";
@@ -17,6 +22,7 @@ const App = () => {
           <Route path="/items/:id">
             <ItemDetails />
           </Route>
+          <Redirect to="/" />
         </Switch>
       </Router>
     </main>
