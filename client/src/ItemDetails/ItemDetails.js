@@ -36,9 +36,7 @@ const ItemDetails = () => {
   return (
     <div>
       {response.isLoading && <div>Cargando...</div>}
-
       {!response.isloading && response.item && <div>{response.item.title}</div>}
-
       {!response.isLoading && response.errorMsg && (
         <div>Ha ocurrido un error, por favor intenta nuevamente</div>
       )}

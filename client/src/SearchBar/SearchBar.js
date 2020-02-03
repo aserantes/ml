@@ -125,6 +125,13 @@ const SearchBar = () => {
     setSearchTrigger(true);
   };
 
+  const handleKeyPress = e => {
+    // if enter key is pressed while at the input, simulate a click in the search button
+    if (e.key === "Enter") {
+      handleClick();
+    }
+  };
+
   return (
     <Wrapper>
       <LogoWrapper>
@@ -139,6 +146,7 @@ const SearchBar = () => {
           placeholder="Nunca dejes de buscar"
           value={query}
           onChange={e => setQuery(e.target.value)}
+          onKeyPress={e => handleKeyPress(e)}
         />
       </InputWrapper>
       <SearchButtonWrapper>
