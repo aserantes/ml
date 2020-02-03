@@ -2,7 +2,7 @@ import { createGlobalStyle } from "styled-components";
 
 const theme = {
   primary: "#FFE600",
-  highLight: "3483FA",
+  highLight: "#3483FA",
   black: "#333",
   darkGray: "#666",
   gray: "#999",

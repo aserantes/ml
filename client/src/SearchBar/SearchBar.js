@@ -13,13 +13,13 @@ const Wrapper = styled.div`
 `;
 
 const LogoWrapper = styled.div`
-  @media (max-width: 640px) {
+  @media (max-width: 1279px) {
     margin-left: 10px;
   }
   align-items: center;
   margin-right: 25px;
   margin-left: 150px;
-  @media (min-width: 1281px) {
+  @media (min-width: 2560px) {
     margin-right: 50px;
     margin-left: 300px;
   }
@@ -27,12 +27,12 @@ const LogoWrapper = styled.div`
 
 const LogoImg = styled.div`
   background-image: url(${logo});
-  width: 53px;
-  height: 36px;
-  @media (min-width: 1281px) {
+  min-width: 53px;
+  min-height: 36px;
+  @media (min-width: 2560px) {
     background-image: url(${logoBig});
-    width: 106px;
-    height: 72px;
+    min-width: 106px;
+    min-height: 72px;
   }
 `;
 
@@ -40,7 +40,7 @@ const InputWrapper = styled.div`
   flex: auto;
   height: 56px;
   align-items: center;
-  @media (min-width: 1281px) {
+  @media (min-width: 2560px) {
     height: 112px;
   }
 `;
@@ -54,7 +54,7 @@ const Input = styled.input`
   height: 36px;
   border-radius: 4px 0 0 4px;
   padding-left: 15px;
-  @media (min-width: 1281px) {
+  @media (min-width: 2560px) {
     font-size: 32px;
     height: 76px;
     border-radius: 8px 0 0 8px;
@@ -63,12 +63,12 @@ const Input = styled.input`
 `;
 
 const SearchButtonWrapper = styled.div`
-  @media (max-width: 640px) {
+  @media (max-width: 1279px) {
     margin-right: 10px;
   }
   align-items: center;
   margin-right: 150px;
-  @media (min-width: 1281px) {
+  @media (min-width: 2560px) {
     margin-right: 300px;
   }
 `;
@@ -83,7 +83,7 @@ const SearchButton = styled.div`
   &:hover {
     cursor: pointer;
   }
-  @media (min-width: 1281px) {
+  @media (min-width: 2560px) {
     border-radius: 0 8px 8px 0;
     width: 84px;
     height: 76px;
@@ -92,12 +92,12 @@ const SearchButton = styled.div`
 
 const SearchImg = styled.div`
   background-image: url(${search});
-  width: 18px;
-  height: 18px;
-  @media (min-width: 1281px) {
+  min-width: 18px;
+  min-height: 18px;
+  @media (min-width: 2560px) {
     background-image: url(${searchBig});
-    width: 36px;
-    height: 36px;
+    min-width: 36px;
+    min-height: 36px;
   }
 `;
 

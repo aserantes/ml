@@ -7,14 +7,14 @@ import styled from "styled-components";
 import ItemCard from "./ItemCard/ItemCard";
 
 const ListWrapper = styled.div`
-  @media (max-width: 640px) {
-    margin: 0 10px;
+  @media (max-width: 1279px) {
+    margin: 50px 10px;
   }
   display: block;
   background-color: ${props => props.theme.white};
   margin: 50px 150px;
   border-radius: 4px;
-  @media (min-width: 1281px) {
+  @media (min-width: 2560px) {
     margin: 100px 300px;
     border-radius: 8px;
   }
@@ -29,7 +29,7 @@ const Message = styled.p`
   & span {
     font-weight: bold;
   }
-  @media (min-width: 1281px) {
+  @media (min-width: 2560px) {
     padding: 20px;
     font-size: 32px;
     border-radius: 8px;
